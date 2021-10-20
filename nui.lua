@@ -4,7 +4,7 @@ Citizen.CreateThread(function()
     while true do
         local iPed = GetPlayerPed(-1)
         Citizen.Wait(8)
-        local playerloc = GetEntityCoords(iPed
+        local playerloc = GetEntityCoords(iPed)
         local streethash = GetStreetNameAtCoord(playerloc.x, playerloc.y, playerloc.z)
         street = GetStreetNameFromHashKey(streethash)
         if IsPedInAnyVehicle(iPed) == 1 then
