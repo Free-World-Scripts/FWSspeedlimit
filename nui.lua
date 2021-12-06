@@ -62,7 +62,7 @@ AddEventHandler("hud:speed", function(toggled)
     end
 end)
 
-RegisterCommand(Config.command, function(source, args)
+RegisterCommand(Config.Command, function(source, args)
     local iPed = GetPlayerPed(-1)
     local mspeed = false
     if IsPedInAnyVehicle(iPed) then

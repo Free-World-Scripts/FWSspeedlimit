@@ -2,13 +2,13 @@ fx_version 'bodacious'
 
 game 'gta5'
 
-version 'v1.0'
+version 'v2.0'
 
 Author 'Free World Scripts'
 
 client_scripts {
-    'nui.lua',
-    'config.lua'
+    'config.lua',
+    'nui.lua'
 }
 
 ui_page 'html/index.html'
