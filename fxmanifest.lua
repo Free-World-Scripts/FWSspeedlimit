@@ -6,12 +6,16 @@ version 'v1.0'
 
 Author 'Free World Scripts'
 
-client_script 'nui.lua'
+client_scripts {
+    'nui.lua',
+    'config.lua'
+}
 
 ui_page 'html/index.html'
 
 files {
     'html/index.css',
     'html/index.js',
-    'html/index.html'
+    'html/index.html',
+    'html/sign.png'
 }
