@@ -1,5 +1,7 @@
 Config = {}
 
+Config.command = 'movesign'
+
 Config.Speed = 'mph' --This can either be mph or kph. If it does not match either of these options it defaults to mph
 
 Config.Speedlimits = {
