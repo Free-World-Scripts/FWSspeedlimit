@@ -2,7 +2,7 @@ fx_version 'bodacious'
 
 game 'gta5'
 
-version 'v2.0'
+version 'v2.1'
 
 Author 'Free World Scripts'
 

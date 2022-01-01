@@ -1,4 +1,4 @@
-local speedlimit = "N/a"
+local speedlimit = "N/A"
 local dis = true
 local currentspeed = 0
 
@@ -9,7 +9,25 @@ Citizen.CreateThread(function()
         local playerloc = GetEntityCoords(iPed)
         local streethash = GetStreetNameAtCoord(playerloc.x, playerloc.y, playerloc.z)
         street = GetStreetNameFromHashKey(streethash)
-        if IsPedInAnyVehicle(iPed) == 1 then
+        if IsPedInAnyPlane(iPed) == 1 then
+            dis = true
+            SendNUIMessage({
+                Speed = "",
+                Display = dis
+            })
+        elseif IsPedInAnyHeli(iPed) == 1 then
+            dis = true
+            SendNUIMessage({
+                Speed = "",
+                Display = dis
+            })
+        elseif IsPedInAnyBoat(iPed) == 1 then
+            dis = true
+            SendNUIMessage({
+                Speed = "",
+                Display = dis
+            })
+        elseif IsPedInAnyVehicle(iPed) == 1 then
             dis = false
             if currentspeed ~= Config.Speedlimits[street] then
                 SendNUIMessage({
@@ -74,12 +92,6 @@ end)
 Citizen.CreateThread(function()
     while mspeed do
         Citizen.Wait(0)
-        -- https://runtime.fivem.net/doc/natives/#_0xFE99B66D079CF6BC
-        --[[ 
-            inputGroup -- integer , 
-	        control --integer , 
-            disable -- boolean 
-        ]]
         DisableControlAction(0, 1, display) -- LookLeftRight
         DisableControlAction(0, 2, display) -- LookUpDown
         DisableControlAction(0, 142, display) -- MeleeAttackAlternate
