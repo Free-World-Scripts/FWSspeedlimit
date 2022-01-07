@@ -2,10 +2,10 @@ local speedlimit = "N/A"
 local dis = true
 local currentspeed = 0
 
-Citizen.CreateThread(function()
+CreateThread(function()
     while true do
         local iPed = GetPlayerPed(-1)
-        Citizen.Wait(1000)
+        Wait(1000)
         local playerloc = GetEntityCoords(iPed)
         local streethash = GetStreetNameAtCoord(playerloc.x, playerloc.y, playerloc.z)
         street = GetStreetNameFromHashKey(streethash)
@@ -64,8 +64,7 @@ Citizen.CreateThread(function()
     end    
 end)
 
-RegisterNetEvent("hud:speed")
-AddEventHandler("hud:speed", function(toggled)
+RegisterNetEvent("hud:speed", function(toggled)
     local size
     local height
     local iPed = GetPlayerPed(-1)
@@ -89,9 +88,9 @@ RegisterCommand(Config.Command, function(source, args)
     end
 end)
 
-Citizen.CreateThread(function()
+CreateThread(function()
     while mspeed do
-        Citizen.Wait(0)
+        Wait(0)
         DisableControlAction(0, 1, display) -- LookLeftRight
         DisableControlAction(0, 2, display) -- LookUpDown
         DisableControlAction(0, 142, display) -- MeleeAttackAlternate
